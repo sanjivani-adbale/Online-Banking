@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>NewUser</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top: 40px;background-color: rgb(224, 218, 218);">
+    <div class="container">
+        <h1 align="center" class="display-4" style="color:black"><b>New user registration</b></h1>
+        <hr>
+        <form action="Register" method="post">
+            <table align="center" cellpadding="3px">
+                <tr>
+                    <th>UserID</th>
+                    <td><input type="text" name="uid" style="background-color: rgb(238, 251, 252);" autocomplete="off" required class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>Password</th>
+                    <td><input type="password" name="psw" style="background-color: rgb(238, 251, 252);" autocomplete="off" required class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>UserName</th>
+                    <td><input type="text" name="unm" style="background-color: rgb(238, 251, 252);" autocomplete="off" required class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>UserType</th>
+                    <td><input type="text" name="utyp" style="background-color: rgb(238, 251, 252);" value="customer" disabled class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>UserStatus</th>
+                    <td><input type="text" name="ustat" style="background-color: rgb(238, 251, 252);" value="active" disabled class="form-control"></td>
+                </tr>
+                <tr>
+                <th>Account Number</th>
+                <td><input type="number" name="ano" style="background-color: rgb(238, 251, 252);" autocomplete="off" required class="form-control">
+                </tr>
+                <tr>
+                    <th>Branch</th>
+                    <td>
+                        <select name="brn" style="background-color: rgb(238, 251, 252);" class="form-control">
+                            <option value="mumbai">Mumbai</option>
+                            <option value="london">London</option>
+                            <option value="dubai">Dubai</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Mobile</th>
+                    <td><input type="tel" name="mob" style="background-color: rgb(238, 251, 252);" autocomplete="off" required class="form-control"></td>
+                </tr>
+                <tr>
+                <td></td>
+                    <td><input type="submit" value="Submit" class="btn btn-outline-primary">
+                    <input type="reset" value="Reset" class="btn btn-outline-primary"></td>
+                    
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

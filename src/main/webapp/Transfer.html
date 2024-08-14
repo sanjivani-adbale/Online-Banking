@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>transfer</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script type="text/javascript">
+            function createRequestObject() {
+    var tmpXmlHttpObject;
+    if (window.XMLHttpRequest) {
+            tmpXmlHttpObject = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    return tmpXmlHttpObject;
+}
+
+
+var http = createRequestObject();
+
+function makeGetRequest() {
+    ta=document.frm.toacc.value;
+    http.open('get', 'ShowToName.jsp?toacc=' + ta);
+    http.onreadystatechange = processResponse;
+    http.send(null);
+}
+
+function processResponse() {
+    if(http.readyState == 4){
+        var response = http.responseText;
+        document.getElementById('stat').innerHTML = response;
+    }
+}
+
+        </script>
+</head>
+<body style="margin-top: 35px;background-color: rgb(224, 218, 218);">
+    <div class="container">
+        <h2 align="center" class="display-4"><b>Transfer Money Form</b></h2>
+        <hr>
+        <form action="TransferAmount.jsp" method="post" name="frm">
+            <table align="center">
+                <tr>
+                    <th>From Account</th>
+                    <td><input type="number" name="fromacc" autocomplete="off" required class="form-control"></td>
+                </tr>
+                <tr>
+                    <th>To Account</th>
+                    <td><input type="number" name="toacc" autocomplete="off" required class="form-control"></td>
+                    <td><div id="stat"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Amount</th>
+                    <td><input type="number" name="amount" class="form-control" onFocus="makeGetRequest()" autocomplete="off" required></td>
+                </tr>
+                <tr>
+                    <th>Remarks</th>
+                    <td>
+                        <textarea name="remarks" cols="30" rows="3" class="form-control" autocomplete="off" required></textarea>
+                    </td>
+                </tr>
+                <tr>
+                <td></td>
+                </tr>
+                <tr>
+                <td></td>
+                    <td><input type="submit" value="Transfer" class="btn btn-secondary"></td>
+                    
+                </tr>
+            </table>
+
+        </form>
+
+        </div>
+
+</body>
+</html>

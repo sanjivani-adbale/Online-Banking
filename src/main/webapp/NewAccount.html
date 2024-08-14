@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>NewAccount</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top: 35px;background-color: rgb(224, 218, 218);">
+    <div class="container">
+        <h1 class="display-4">New Account Form</h1>
+        <hr>
+        <form action="AddAccount" method="post">
+        <table align="center">
+            <tr>
+                <th>Account Number</th>
+                <td><input type="number" name="accno" style="background-color: rgb(238, 251, 252);" autocomplete="off" required class="form-control"></td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td><input type="text" name="accnm" style="background-color: rgb(238, 251, 252);" autocomplete="off" required class="form-control"></td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>
+                    <select name="acctype" style="background-color: rgb(238, 251, 252);" class="form-control">
+                        <option value="saving">Saving</option>
+                        <option value="fixed">Fixed</option>
+                        <option value="current">Current</option>
+                        <option value="ppf">PPF</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Balance</th>
+                <td><input type="number" name="balance" style="background-color: rgb(238, 251, 252);" autocomplete="off" required class="form-control"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit" class="btn btn-primary"></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+
+</body>
+</html>
